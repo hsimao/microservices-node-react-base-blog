@@ -63,7 +63,7 @@ app.listen(4002, async () => {
 
   // 每次從啟 query service 時跟 event service 取得當前所有 events
   // 並逐一執行將資料補回
-  const res = await axios.get('http://localhost:4005/events')
+  const res = await axios.get('http://event-bus-srv:4005/events')
   for (let event of res.data) {
     console.log('Processing event: ', event.type)
 
